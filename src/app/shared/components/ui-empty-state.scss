@@ -1,0 +1,12 @@
+.ui-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--color-texto-suave);
+}
+.ui-empty-state__icono { font-size: 3rem; margin-bottom: 1rem; opacity: 0.5; }
+.ui-empty-state__titulo { margin: 0 0 0.5rem; font-size: 1.1rem; font-weight: 600; color: var(--color-texto); }
+.ui-empty-state__descripcion { margin: 0 0 1.5rem; font-size: 0.9rem; }
+.ui-empty-state--con-accion { padding-bottom: 2rem; }

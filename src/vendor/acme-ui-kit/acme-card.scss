@@ -1,0 +1,46 @@
+.acme-card {
+  background: var(--acme-superficie);
+  border: 1px solid var(--acme-borde);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.acme-card--elevada {
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+}
+
+.acme-card__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--acme-borde);
+}
+
+.acme-card__titulo {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--acme-texto);
+}
+
+.acme-card__subtitulo {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  color: var(--acme-texto-suave);
+}
+
+.acme-card__acciones {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.acme-card__cuerpo {
+  padding: 1.1rem;
+}
+
+.acme-card--sin-cuerpo .acme-card__cuerpo {
+  padding: 0;
+}

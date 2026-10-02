@@ -1,0 +1,17 @@
+.ui-card {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.ui-card--elevada { box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08); }
+.ui-card__cabecera {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.9rem 1.1rem; border-bottom: 1px solid var(--color-borde);
+}
+.ui-card__titulo { margin: 0; font-size: 1rem; font-weight: 700; color: var(--color-texto); }
+.ui-card__subtitulo { margin: 0.15rem 0 0; font-size: 0.8rem; color: var(--color-texto-suave); }
+.ui-card__acciones { display: flex; gap: 0.5rem; align-items: center; }
+.ui-card__cuerpo { padding: 1.1rem; }
+.ui-card__pie { padding: 0.9rem 1.1rem; border-top: 1px solid var(--color-borde); display: flex; justify-content: flex-end; gap: 0.5rem; }
+.ui-card__acciones-pie { display: flex; gap: 0.5rem; }

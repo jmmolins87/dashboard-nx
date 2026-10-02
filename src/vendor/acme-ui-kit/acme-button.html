@@ -1,0 +1,11 @@
+<button
+  type="button"
+  [class]="clases()"
+  [disabled]="inactivo()"
+  [attr.aria-busy]="cargando() || null"
+>
+  @if (cargando()) {
+    <span class="acme-btn__spinner" aria-hidden="true"></span>
+  }
+  <span class="acme-btn__contenido"><ng-content /></span>
+</button>

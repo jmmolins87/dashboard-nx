@@ -1,0 +1,9 @@
+@if (tipo() === 'linea' || tipo() === 'texto') {
+  @for (i of [].constructor(lineas()); track i) {
+    <div class="ui-skeleton__linea" [style]="estilos()"></div>
+  }
+} @else if (tipo() === 'bloque') {
+  <div class="ui-skeleton__bloque" [style.width]="ancho()" [style.height]="alto()"></div>
+} @else {
+  <div class="ui-skeleton__circular" [style.width]="alto()" [style.height]="alto()"></div>
+}

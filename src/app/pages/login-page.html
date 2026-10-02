@@ -1,0 +1,31 @@
+<app-ui-card titulo="Iniciar sesión" subtitulo="Selecciona un usuario de prueba" [elevada]="true" class="login-card">
+  <form (ngSubmit)="login()" class="login-form">
+    <app-ui-input
+      etiqueta="Usuario"
+      placeholder="Email del usuario"
+      [(ngModel)]="usuario"
+      nombre="usuario"
+      [requerido]="true"
+      [error]="error()"
+    />
+    <app-ui-input
+      etiqueta="Contraseña"
+      tipo="password"
+      placeholder="Cualquier contraseña"
+      [(ngModel)]="password"
+      nombre="password"
+    />
+    @if (error()) { <div class="login-error">{{ error() }}</div> }
+    <div class="login-usuarios">
+      <label class="login-label">Usuarios de prueba:</label>
+      <div class="login-botones">
+        @for (u of usuariosDisponibles(); track u.id) {
+          <button type="button" class="login-usuario-btn" (click)="usuario.set(u.email); password.set('1234')">
+            {{ u.nombre }} ({{ u.rol }})
+          </button>
+        }
+      </div>
+    </div>
+    <app-ui-button tipo="submit" bloqueado>Entrar</app-ui-button>
+  </form>
+</app-ui-card>

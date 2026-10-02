@@ -1,0 +1,35 @@
+@if (pedido(); as p) {
+  <app-ui-page-header
+    [titulo]="'Pedido ' + p.numero"
+    [subtitulo]="'Cliente: ' + (cliente()?.nombre ?? '—')"
+    [acciones]="[
+      { etiqueta: 'Editar', clic: () => router.navigate(['/pedidos', p!.id, 'editar']) },
+      { etiqueta: p.estado === 'cancelado' ? '' : 'Cancelar', variante: 'peligro', clic: () => mostrarCancelar.set(true) }
+    ]"
+  />
+
+  <div class="detail-grid">
+    <div class="detail-main">
+      <app-order-summary-card [pedido]="p" />
+      <app-order-items-table [items]="p.items" [inventory]="inventory" />
+      <app-order-timeline [pedido]="p" />
+    </div>
+    <aside class="detail-sidebar">
+      <app-ui-card titulo="Facturas relacionadas">
+        @for (f of facturas(); track f.id) {
+          <div class="detail-fila">
+            <span>{{ f.numero }}</span>
+            <app-ui-badge [variante]="estadoVariante(f.estado)">{{ f.estado | statusLabel:'factura' }}</app-ui-badge>
+          </div>
+        } @empty { <p class="empty">Sin facturas</p> }
+      </app-ui-card>
+    </aside>
+  </div>
+
+  <app-order-cancel-dialog
+    [abierto]="mostrarCancelar()"
+    [motivo]="cancelarMotivo()"
+    (confirmar)="cancelar()"
+    (cancelar)="mostrarCancelar.set(false)"
+  />
+}

@@ -1,0 +1,24 @@
+<div class="ui-select-group">
+  @if (etiqueta()) {
+    <label class="ui-select__etiqueta" [for]="id()">
+      {{ etiqueta() }} @if (requerido()) { <span class="ui-select__requerido" aria-hidden="true">*</span> }
+    </label>
+  }
+  <select
+    [id]="id()"
+    [disabled]="deshabilitado()"
+    [value]="_valor()"
+    (change)="onChangeSelect($event)"
+    (blur)="onBlur()"
+    class="ui-select"
+    [class.ui-select--error]="error()"
+  >
+    <option value="">{{ placeholder() }}</option>
+    @for (op of opciones(); track op.valor) {
+      <option [value]="op.valor">{{ op.etiqueta }}</option>
+    }
+  </select>
+  @if (error()) {
+    <span class="ui-select__error" role="alert">{{ error() }}</span>
+  }
+</div>

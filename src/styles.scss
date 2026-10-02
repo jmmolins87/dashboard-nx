@@ -1,1 +1,271 @@
-/* You can add global styles to this file, and also import other style files */
+// ============================================================================
+// VARIABLES CSS GLOBALES — TEMA ACME ERP
+// ============================================================================
+:root {
+  /* Colores base */
+  --color-primario: #4f46e5;
+  --color-primario-suave: #eef2ff;
+  --color-primario-oscuro: #4338ca;
+  --color-secundario: #06b6d4;
+  --color-exito: #10b981;
+  --color-exito-suave: #d1fae5;
+  --color-advertencia: #f59e0b;
+  --color-advertencia-suave: #fef3c7;
+  --color-peligro: #ef4444;
+  --color-peligro-suave: #fee2e2;
+  --color-info: #3b82f6;
+  --color-info-suave: #dbeafe;
+
+  /* Neutros */
+  --color-fondo: #f8fafc;
+  --color-superficie: #ffffff;
+  --color-fondo-suave: #f1f5f9;
+  --color-borde: #e2e8f0;
+  --color-borde-oscuro: #cbd5e1;
+  --color-texto: #0f172a;
+  --color-texto-suave: #64748b;
+  --color-texto-muy-suave: #94a3b8;
+
+  /* Sombras */
+  --sombra-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --sombra: 0 1px 3px rgba(15, 23, 42, 0.1), 0 1px 2px rgba(15, 23, 42, 0.06);
+  --sombra-md: 0 4px 6px rgba(15, 23, 42, 0.07), 0 2px 4px rgba(15, 23, 42, 0.06);
+  --sombra-lg: 0 10px 15px rgba(15, 23, 42, 0.1), 0 4px 6px rgba(15, 23, 42, 0.05);
+  --sombra-xl: 0 20px 25px rgba(15, 23, 42, 0.1), 0 10px 10px rgba(15, 23, 42, 0.04);
+
+  /* Espaciado */
+  --espacio-1: 0.25rem;
+  --espacio-2: 0.5rem;
+  --espacio-3: 0.75rem;
+  --espacio-4: 1rem;
+  --espacio-5: 1.25rem;
+  --espacio-6: 1.5rem;
+  --espacio-8: 2rem;
+  --espacio-10: 2.5rem;
+  --espacio-12: 3rem;
+  --espacio-16: 4rem;
+
+  /* Radio de borde */
+  --radio-sm: 4px;
+  --radio: 6px;
+  --radio-md: 8px;
+  --radio-lg: 10px;
+  --radio-xl: 12px;
+  --radio-full: 9999px;
+
+  /* Tipografía */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Transiciones */
+  --transicion-rapida: 150ms ease;
+  --transicion: 200ms ease;
+  --transicion-lenta: 300ms ease;
+
+  /* Z-index */
+  --z-dropdown: 100;
+  --z-sticky: 100;
+  --z-modal: 200;
+  --z-popover: 300;
+  --z-tooltip: 400;
+  --z-toast: 500;
+}
+
+/* Tema oscuro */
+[data-theme='oscuro'] {
+  --color-primario: #818cf8;
+  --color-primario-suave: #1e1b4b;
+  --color-primario-oscuro: #6366f1;
+  --color-fondo: #0f172a;
+  --color-superficie: #1e293b;
+  --color-fondo-suave: #0f172a;
+  --color-borde: #334155;
+  --color-borde-oscuro: #475569;
+  --color-texto: #e2e8f0;
+  --color-texto-suave: #94a3b8;
+  --color-texto-muy-suave: #64748b;
+  --color-fondo-suave: #1e293b;
+}
+
+/* Densidad compacta */
+[data-densidad='compacta'] {
+  --espacio-1: 0.125rem;
+  --espacio-2: 0.25rem;
+  --espacio-3: 0.375rem;
+  --espacio-4: 0.5rem;
+  --espacio-5: 0.625rem;
+  --espacio-6: 0.75rem;
+  --espacio-8: 1rem;
+  --espacio-10: 1.25rem;
+  --espacio-12: 1.5rem;
+  --espacio-16: 2rem;
+}
+
+/* ============================================================================
+   RESET Y BASE
+   ============================================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-texto);
+  background: var(--color-fondo);
+  min-height: 100vh;
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-texto);
+}
+
+h1 { font-size: 1.875rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.125rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; }
+
+p { margin: 0 0 1rem; }
+
+a { color: var(--color-primario); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code, pre {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* Formularios */
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+  color: var(--color-texto);
+  transition: border-color var(--transicion-rapida), box-shadow var(--transicion-rapida);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px var(--color-primario-suave);
+}
+
+input::placeholder { color: var(--color-texto-muy-suave); }
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-texto);
+  margin-bottom: 0.35rem;
+}
+
+/* Botones */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Utilidades de espacio */
+.mt-1 { margin-top: var(--espacio-1); }
+.mt-2 { margin-top: var(--espacio-2); }
+.mt-3 { margin-top: var(--espacio-3); }
+.mt-4 { margin-top: var(--espacio-4); }
+.mt-6 { margin-top: var(--espacio-6); }
+.mb-1 { margin-bottom: var(--espacio-1); }
+.mb-2 { margin-bottom: var(--espacio-2); }
+.mb-3 { margin-bottom: var(--espacio-3); }
+.mb-4 { margin-bottom: var(--espacio-4); }
+.mb-6 { margin-bottom: var(--espacio-6); }
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: var(--espacio-1); }
+.gap-2 { gap: var(--espacio-2); }
+.gap-3 { gap: var(--espacio-3); }
+.gap-4 { gap: var(--espacio-4); }
+.gap-6 { gap: var(--espacio-6); }
+
+.text-sm { font-size: 0.8rem; }
+.text-xs { font-size: 0.7rem; }
+.text-lg { font-size: 1.125rem; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.text-suave { color: var(--color-texto-suave); }
+.text-peligro { color: var(--color-peligro); }
+.text-exito { color: var(--color-exito); }
+.text-advertencia { color: var(--color-advertencia); }
+.text-primario { color: var(--color-primario); }
+
+/* Scrollbar */
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: var(--color-borde); border-radius: 4px; }
+*::-webkit-scrollbar-thumb:hover { background: var(--color-texto-suave); }
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 2px;
+}
+
+/* Animaciones */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in { animation: fade-in var(--transicion) ease; }
+.animate-slide-up { animation: slide-up var(--transicion) ease; }
+.animate-spin { animation: spin 1s linear infinite; }
+
+/* Reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

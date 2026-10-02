@@ -1,0 +1,23 @@
+<div
+  class="acme-card"
+  [class.acme-card--elevada]="elevada()"
+  [class.acme-card--sin-cuerpo]="sinCuerpo()"
+>
+  @if (titulo() || subtitulo()) {
+    <header class="acme-card__cabecera">
+      <div class="acme-card__titulos">
+        @if (titulo()) {
+          <h3 class="acme-card__titulo">{{ titulo() }}</h3>
+        }
+        @if (subtitulo()) {
+          <p class="acme-card__subtitulo">{{ subtitulo() }}</p>
+        }
+      </div>
+      <div class="acme-card__acciones"><ng-content select="[acciones]" /></div>
+    </header>
+  }
+  <div class="acme-card__cuerpo">
+    <ng-content />
+  </div>
+  <ng-content select="[pie]" />
+</div>

@@ -1,0 +1,21 @@
+<div class="cancel-dialog" *ngIf="abierto()">
+  <div class="cancel-dialog__overlay" (click)="onCancelar()"></div>
+  <div class="cancel-dialog__modal">
+    <header class="cancel-dialog__header">
+      <h2>Cancelar pedido</h2>
+    </header>
+    <div class="cancel-dialog__body">
+      <p>¿Estás seguro de que quieres cancelar este pedido?</p>
+      <textarea
+        class="cancel-dialog__motivo"
+        placeholder="Motivo de la cancelación (opcional)"
+        [(ngModel)]="motivo"
+        rows="3"
+      ></textarea>
+    </div>
+    <footer class="cancel-dialog__footer">
+      <app-ui-button variante="fantasma" (clic)="onCancelar()">Cancelar</app-ui-button>
+      <app-ui-button variante="peligro" (clic)="onConfirmar()">Confirmar cancelación</app-ui-button>
+    </footer>
+  </div>
+</div>

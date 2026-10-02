@@ -1,0 +1,25 @@
+.ui-skeleton__linea {
+  height: 1rem;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--color-fondo-suave) 25%, var(--color-borde) 50%, var(--color-fondo-suave) 75%);
+  background-size: 200% 100%;
+  animation: ui-skeleton-brillo 1.2s infinite;
+}
+
+.ui-skeleton__bloque {
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--color-fondo-suave) 25%, var(--color-borde) 50%, var(--color-fondo-suave) 75%);
+  background-size: 200% 100%;
+  animation: ui-skeleton-brillo 1.2s infinite;
+}
+
+.ui-skeleton__circular {
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--color-fondo-suave) 25%, var(--color-borde) 50%, var(--color-fondo-suave) 75%);
+  background-size: 200% 100%;
+  animation: ui-skeleton-brillo 1.2s infinite;
+}
+
+@keyframes ui-skeleton-brillo {
+  to { background-position: -200% 0; }
+}

@@ -1,0 +1,56 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 64px 1fr;
+  min-height: 100vh;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+  transition: grid-template-columns 0.25s ease;
+}
+.app-shell .app-sidebar { grid-area: sidebar; }
+.app-shell .app-header { grid-area: header; }
+.app-shell .app-main {
+  grid-area: main;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-fondo);
+}
+.app-main--colapsado { margin-left: 0; }
+.app-shell .app-sidebar--colapsado ~ .app-main { margin-left: 72px; }
+
+/* Estilos globales de formulario */
+input, select, textarea, button {
+  font-family: inherit;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px var(--color-primario-suave);
+}
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+a { color: var(--color-primario); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Utilidades */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* Scrollbar */
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: var(--color-borde); border-radius: 4px; }
+*::-webkit-scrollbar-thumb:hover { background: var(--color-texto-suave); }
+
+@media (max-width: 1024px) {
+  .app-shell { grid-template-columns: 72px 1fr; }
+  .app-shell .app-sidebar { width: 72px; min-width: 72px; }
+  .app-main { margin-left: 72px; }
+}
+@media (max-width: 768px) {
+  .app-header__centro { display: none; }
+  .app-header__busqueda--abierta { position: fixed; top: 64px; left: 0; right: 0; z-index: 99; background: var(--color-superficie); border-bottom: 1px solid var(--color-borde); padding: 1rem; }
+}

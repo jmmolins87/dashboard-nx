@@ -1,0 +1,124 @@
+:host {
+  display: inline-block;
+  position: relative;
+}
+
+.acme-dp {
+  position: relative;
+}
+
+.acme-dp__boton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  width: 100%;
+  min-width: 10rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--acme-borde);
+  border-radius: 6px;
+  background: var(--acme-superficie);
+  color: var(--acme-texto);
+  font: inherit;
+  cursor: pointer;
+}
+
+.acme-dp__boton--abierto {
+  border-color: var(--acme-primario);
+}
+
+.acme-dp__valor--vacio {
+  color: var(--acme-texto-suave);
+}
+
+.acme-dp__icono {
+  font-size: 0.85rem;
+}
+
+.acme-dp__calendario {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 60;
+  background: var(--acme-superficie);
+  border: 1px solid var(--acme-borde);
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  padding: 0.6rem;
+  width: 15rem;
+}
+
+.acme-dp__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.acme-dp__cabecera button {
+  border: 1px solid var(--acme-borde);
+  background: var(--acme-superficie);
+  border-radius: 5px;
+  width: 1.6rem;
+  height: 1.6rem;
+  cursor: pointer;
+  color: var(--acme-texto);
+}
+
+.acme-dp__mes {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  color: var(--acme-texto);
+}
+
+.acme-dp__rejilla {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.acme-dp__dia-semana {
+  text-align: center;
+  font-size: 0.65rem;
+  color: var(--acme-texto-suave);
+  padding: 0.2rem 0;
+}
+
+.acme-dp__dia {
+  aspect-ratio: 1;
+  border: none;
+  background: transparent;
+  border-radius: 5px;
+  font-size: 0.78rem;
+  color: var(--acme-texto);
+  cursor: pointer;
+}
+
+.acme-dp__dia:hover {
+  background: var(--acme-fondo-suave);
+}
+
+.acme-dp__dia--seleccionado {
+  background: var(--acme-primario);
+  color: #fff;
+  font-weight: 700;
+}
+
+.acme-dp__dia--vacio {
+  cursor: default;
+}
+
+.acme-dp__pie {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.4rem;
+}
+
+.acme-dp__limpiar {
+  border: none;
+  background: none;
+  color: var(--acme-primario);
+  font-size: 0.75rem;
+  cursor: pointer;
+}

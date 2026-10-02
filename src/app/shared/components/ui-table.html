@@ -1,0 +1,32 @@
+<div class="ui-table" [class.ui-table--cargando]="cargando()">
+  @if (cargando()) {
+    <div class="ui-table__esqueleto" role="status" aria-label="Cargando">
+      @for (linea of [1, 2, 3, 4, 5]; track linea) {
+        <div class="ui-table__esqueleto-linea"></div>
+      }
+    </div>
+  } @else if (vacio()) {
+    <div class="ui-table__vacio">{{ mensajeVacio() }}</div>
+  } @else {
+    <div class="ui-table__scroll">
+      <table class="ui-table__tabla">
+        <thead>
+          <tr>
+            @for (col of columnas(); track col.clave) {
+              <th [class]="'ui-table__celda--' + (col.alineacion ?? 'izquierda')">{{ col.titulo }}</th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          @for (fila of filas(); track $index) {
+            <tr (click)="onClick(fila)" class="ui-table__fila--clicable">
+              @for (col of columnas(); track col.clave) {
+                <td [class]="'ui-table__celda--' + (col.alineacion ?? 'izquierda')">{{ celda(fila, col) }}</td>
+              }
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

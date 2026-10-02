@@ -1,0 +1,67 @@
+.acme-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.acme-dialogo {
+  background: var(--acme-superficie);
+  border-radius: 12px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.acme-dialogo--pequeño { width: min(420px, 100%); }
+.acme-dialogo--mediano { width: min(640px, 100%); }
+.acme-dialogo--grande { width: min(920px, 100%); }
+
+.acme-dialogo__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid var(--acme-borde);
+}
+
+.acme-dialogo__titulo {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--acme-texto);
+}
+
+.acme-dialogo__cerrar {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--acme-texto-suave);
+  cursor: pointer;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+.acme-dialogo__cerrar:hover {
+  background: var(--acme-fondo-suave);
+  color: var(--acme-texto);
+}
+
+.acme-dialogo__cuerpo {
+  padding: 1.2rem;
+  overflow: auto;
+}
+
+.acme-dialogo__pie {
+  padding: 0.9rem 1.2rem;
+  border-top: 1px solid var(--acme-borde);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}

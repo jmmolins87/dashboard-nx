@@ -1,0 +1,19 @@
+<div class="ui-card" [class]="clases()">
+  @if (titulo() || subtitulo()) {
+    <header class="ui-card__cabecera">
+      <div class="ui-card__titulos">
+        @if (titulo()) { <h3 class="ui-card__titulo">{{ titulo() }}</h3> }
+        @if (subtitulo()) { <p class="ui-card__subtitulo">{{ subtitulo() }}</p> }
+      </div>
+      <div class="ui-card__acciones"><ng-content select="[acciones]" /></div>
+    </header>
+  }
+  <div class="ui-card__cuerpo"><ng-content /></div>
+  <footer class="ui-card__pie">
+    <ng-content select="[pie]" />
+    <div class="ui-card__acciones-pie">
+      <app-ui-button variante="fantasma" (clic)="accionSecundaria.emit()">Cancelar</app-ui-button>
+      <app-ui-button (clic)="accionPrincipal.emit()">Confirmar</app-ui-button>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,29 @@
+<aside class="app-sidebar" [class.app-sidebar--colapsado]="colapsado()" role="navigation" aria-label="Navegación principal">
+  <nav class="app-sidebar__nav">
+    <ul class="app-sidebar__lista">
+      @for (area of areas(); track area.id) {
+        <li>
+          <a [routerLink]="area.ruta" routerLinkActive="app-sidebar__enlace--activo" class="app-sidebar__enlace">
+            <span class="app-sidebar__icono" aria-hidden="true">{{ area.icono }}</span>
+            <span class="app-sidebar__etiqueta">{{ area.label }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+  <div class="app-sidebar__pie">
+    <button type="button" class="app-sidebar__toggle" (click)="alternar()" [attr.aria-expanded]="!colapsado()" aria-label="Colapsar menú">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        @if (colapsado()) {
+          <polyline points="9 18 15 12 9 6"></polyline>
+        } @else {
+          <polyline points="15 18 9 12 15 6"></polyline>
+        }
+      </svg>
+    </button>
+    <div class="app-sidebar__usuario" *ngIf="!colapsado()">
+      <span class="app-sidebar__usuario-nombre">{{ auth.usuario()?.nombreCompleto }}</span>
+      <button type="button" class="app-sidebar__logout" (click)="logout()">Salir</button>
+    </div>
+  </div>
+</aside>

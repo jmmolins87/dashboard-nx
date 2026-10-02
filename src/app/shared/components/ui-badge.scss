@@ -1,0 +1,36 @@
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.ui-badge--primario { background: var(--color-primario-suave); color: var(--color-primario); }
+.ui-badge--secundario { background: var(--color-fondo-suave); color: var(--color-texto-suave); }
+.ui-badge--exito { background: var(--color-exito-suave, #d1fae5); color: var(--color-exito, #065f46); }
+.ui-badge--advertencia { background: var(--color-advertencia-suave, #fef3c7); color: var(--color-advertencia, #92400e); }
+.ui-badge--peligro { background: var(--color-peligro-suave, #fee2e2); color: var(--color-peligro, #991b1b); }
+.ui-badge--info { background: var(--color-info-suave, #dbeafe); color: var(--color-info, #1e40af); }
+
+.ui-badge--punto::before {
+  content: '';
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: currentColor;
+  animation: ui-badge-pulso 1.5s infinite;
+}
+
+@keyframes ui-badge-pulso {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.ui-badge--clicable { cursor: pointer; }
+.ui-badge--clicable:hover { filter: brightness(1.1); }

@@ -1,0 +1,43 @@
+<div class="acme-dp" (focusout)="cerrar()">
+  <button
+    type="button"
+    class="acme-dp__boton"
+    [class.acme-dp__boton--abierto]="abierto()"
+    [disabled]="bloqueado"
+    (click)="alternar()"
+  >
+    <span class="acme-dp__valor" [class.acme-dp__valor--vacio]="!valor()">{{ textoValor() || placeholder() }}</span>
+    <span class="acme-dp__icono" aria-hidden="true">📅</span>
+  </button>
+  @if (abierto()) {
+    <div class="acme-dp__calendario" role="dialog" [attr.aria-label]="etiqueta()">
+      <header class="acme-dp__cabecera">
+        <button type="button" (click)="mesAnterior(); $event.stopPropagation()" aria-label="Mes anterior">‹</button>
+        <span class="acme-dp__mes">{{ cabecera() }}</span>
+        <button type="button" (click)="mesSiguiente(); $event.stopPropagation()" aria-label="Mes siguiente">›</button>
+      </header>
+      <div class="acme-dp__rejilla">
+        @for (dia of diasSemana; track dia) {
+          <span class="acme-dp__dia-semana">{{ dia }}</span>
+        }
+        @for (celda of dias(); track $index) {
+          @if (celda; as iso) {
+            <button
+              type="button"
+              class="acme-dp__dia"
+              [class.acme-dp__dia--seleccionado]="estaSeleccionado(iso)"
+              (click)="seleccionar(iso)"
+            >
+              {{ obtenerDia(iso) }}
+            </button>
+          } @else {
+            <span class="acme-dp__dia acme-dp__dia--vacio"></span>
+          }
+        }
+      </div>
+      <footer class="acme-dp__pie">
+        <button type="button" class="acme-dp__limpiar" (click)="limpiar()">Limpiar</button>
+      </footer>
+    </div>
+  }
+</div>

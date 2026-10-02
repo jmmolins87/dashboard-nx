@@ -1,0 +1,58 @@
+<div class="acme-dt" [class.acme-dt--cargando]="cargando()">
+  @if (cargando()) {
+    <div class="acme-dt__esqueleto" role="status" aria-label="Cargando datos">
+      @for (linea of [1, 2, 3, 4, 5]; track linea) {
+        <div class="acme-dt__esqueleto-linea"></div>
+      }
+    </div>
+  } @else if (vacio()) {
+    <div class="acme-dt__vacio">{{ mensajeVacio() }}</div>
+  } @else {
+    <div class="acme-dt__scroll">
+      <table class="acme-dt__tabla">
+        <thead>
+          <tr>
+            @for (col of columnas(); track col.clave) {
+              <th
+                [style.width]="col.ancho"
+                [class]="'acme-dt__celda--' + (col.alineacion ?? 'izquierda')"
+                (click)="cambiarOrden(col.clave)"
+                [attr.aria-sort]="claveOrden() === col.clave ? (direccionOrden() === 'asc' ? 'ascending' : 'descending') : 'none'"
+              >
+                <span class="acme-dt__th-contenido">
+                  {{ col.titulo }}
+                  @if (claveOrden() === col.clave) {
+                    <span class="acme-dt__orden">{{ direccionOrden() === 'asc' ? '▲' : '▼' }}</span>
+                  }
+                </span>
+              </th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+@for (fila of filasVisibles(); track $index) {
+            <tr (click)="filaClic.emit(fila)" class="acme-dt__fila--clicable">
+              @for (col of columnas(); track col.clave) {
+                <td
+                  [class]="'acme-dt__celda--' + (col.alineacion ?? 'izquierda')"
+                  [class.acme-dt__resaltado]="coincideResaltado(fila[col.clave])"
+                >
+                  {{ celda(fila, col) }}
+                </td>
+              }
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    @if (conPaginacion() && totalPaginas() > 1) {
+      <nav class="acme-dt__paginacion" aria-label="Paginación de tabla">
+        <button type="button" (click)="irAPagina(paginaActual() - 1)" [disabled]="paginaActual() <= 1">‹</button>
+        @for (p of rangoPaginas(); track p) {
+          <button type="button" [class.acme-dt__pagina--activa]="p === paginaActual()" (click)="irAPagina(p)">{{ p }}</button>
+        }
+        <button type="button" (click)="irAPagina(paginaActual() + 1)" [disabled]="paginaActual() >= totalPaginas()">›</button>
+      </nav>
+    }
+  }
+</div>

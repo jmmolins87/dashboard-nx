@@ -1,0 +1,5 @@
+.detail-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+.detail-sidebar { display: flex; flex-direction: column; gap: 1rem; }
+.detail-fila { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--color-borde); }
+.empty { color: var(--color-texto-suave); text-align: center; padding: 1rem; font-size: 0.9rem; }
+@media (min-width: 1024px) { .detail-grid { grid-template-columns: 1fr 320px; } }

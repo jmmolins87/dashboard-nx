@@ -1,0 +1,8 @@
+<div class="ui-empty-state" [class.ui-empty-state--con-accion]="accionTexto()">
+  <div class="ui-empty-state__icono" aria-hidden="true">{{ icono() }}</div>
+  <h3 class="ui-empty-state__titulo">{{ titulo() }}</h3>
+  <p class="ui-empty-state__descripcion">{{ descripcion() }}</p>
+  @if (accionTexto()) {
+    <app-ui-button variante="primario" (clic)="ejecutarAccion()">{{ accionTexto() }}</app-ui-button>
+  }
+</div>

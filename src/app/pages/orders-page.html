@@ -1,0 +1,25 @@
+<app-ui-page-header
+  titulo="Pedidos"
+  subtitulo="Gestiona y filtra todos los pedidos"
+  [acciones]="[{ etiqueta: 'Nuevo pedido', variante: 'primario', clic: () => log('nuevo') }]"
+/>
+
+<app-ui-card>
+  <app-orders-filter-panel
+    [filtros]="filtros()"
+    [clientes]="customers.lista()"
+  />
+  <app-orders-table
+    [filas]="lista()"
+    [columnas]="columnasPedidos()"
+    [cargando]="orders.cargando()"
+    [pagina]="pagina()"
+    [totalPaginas]="totalPaginas()"
+    (cambiaPagina)="onPaginaChangeEmit($event)"
+  />
+  <app-ui-pagination
+    [pagina]="pagina()"
+    [totalPaginas]="totalPaginas()"
+    (cambiaPagina)="onPaginaChangeEmit($event)"
+  />
+</app-ui-card>

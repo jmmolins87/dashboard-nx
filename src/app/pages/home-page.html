@@ -1,0 +1,62 @@
+<app-ui-page-header
+  titulo="Panel de control"
+  subtitulo="Resumen general del negocio"
+  [acciones]="[{ etiqueta: 'Actualizar', clic: () => recargar() }]"
+/>
+
+<div class="home-grid">
+  <div class="home-kpis">
+    @for (kpi of kpis(); track kpi.id) {
+      <app-kpi-card [kpi]="kpi" />
+    }
+  </div>
+
+  <div class="home-seccion">
+    <div class="home-seccion__cabecera">
+      <h2>Pedidos recientes</h2>
+      <a routerLink="/pedidos" class="home-seccion__ver-todo">Ver todos</a>
+    </div>
+    <app-ui-card>
+      <app-orders-table
+        [filas]="pedidosRecientes()"
+        [columnas]="columnasPedidos()"
+        [cargando]="state.cargandoPedidos()"
+        [pagina]="1"
+        [totalPaginas]="1"
+        [filaClic]="onFilaClic"
+      />
+    </app-ui-card>
+  </div>
+
+  <div class="home-grid-2">
+    <div class="home-seccion">
+      <div class="home-seccion__cabecera">
+        <h2>Facturas pendientes</h2>
+        <a routerLink="/facturacion" class="home-seccion__ver-todo">Ver todas</a>
+      </div>
+      <app-ui-card>
+        @for (f of facturasPendientes(); track f.id) {
+          <div class="home-fila">
+            <div>
+              <span class="home-fila__titulo">{{ f.numero }}</span>
+              <span class="home-fila__sub">{{ clienteNombre(f.clienteId) }} · {{ f.total | currencyDisplay }}</span>
+            </div>
+            <app-ui-badge [variante]="estadoVariante(f.estado)">{{ f.estado | statusLabel:'factura' }}</app-ui-badge>
+          </div>
+        } @empty {
+          <div class="home-vacio">Sin facturas pendientes</div>
+        }
+      </app-ui-card>
+    </div>
+
+    <div class="home-seccion">
+      <div class="home-seccion__cabecera">
+        <h2>Bajo stock</h2>
+        <a routerLink="/inventario" class="home-seccion__ver-todo">Ver inventario</a>
+      </div>
+      <app-ui-card>
+        <app-low-stock-panel [productos]="productosBajoStock()" />
+      </app-ui-card>
+    </div>
+  </div>
+</div>

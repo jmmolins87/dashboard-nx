@@ -1,0 +1,103 @@
+:host {
+  display: block;
+}
+
+.acme-dt__scroll {
+  overflow-x: auto;
+}
+
+.acme-dt__tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.acme-dt__tabla th {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  background: var(--acme-fondo-suave);
+  color: var(--acme-texto-suave);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--acme-borde);
+  user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.acme-dt__tabla td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--acme-borde);
+  color: var(--acme-texto);
+}
+
+.acme-dt__tabla tbody tr:hover {
+  background: var(--acme-fondo-suave);
+}
+
+.acme-dt__fila--clicable {
+  cursor: pointer;
+}
+
+.acme-dt__celda--derecha { text-align: right; }
+.acme-dt__celda--centro { text-align: center; }
+.acme-dt__celda--izquierda { text-align: left; }
+
+.acme-dt__orden {
+  font-size: 0.65rem;
+}
+
+.acme-dt__resaltado {
+  background: rgba(255, 213, 79, 0.35);
+  border-radius: 3px;
+}
+
+.acme-dt__vacio {
+  padding: 2.2rem 1rem;
+  text-align: center;
+  color: var(--acme-texto-suave);
+  font-size: 0.9rem;
+}
+
+.acme-dt__esqueleto-linea {
+  height: 2.4rem;
+  border-radius: 6px;
+  margin: 0.5rem 0.75rem;
+  background: linear-gradient(90deg, var(--acme-fondo-suave) 25%, var(--acme-borde) 50%, var(--acme-fondo-suave) 75%);
+  background-size: 200% 100%;
+  animation: acme-dt-brillo 1.2s infinite;
+}
+
+@keyframes acme-dt-brillo {
+  to { background-position: -200% 0; }
+}
+
+.acme-dt__paginacion {
+  display: flex;
+  gap: 0.3rem;
+  padding: 0.6rem 0.75rem;
+  border-top: 1px solid var(--acme-borde);
+  justify-content: flex-end;
+}
+
+.acme-dt__paginacion button {
+  min-width: 2rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: 1px solid var(--acme-borde);
+  background: var(--acme-superficie);
+  color: var(--acme-texto);
+  cursor: pointer;
+}
+
+.acme-dt__paginacion button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.acme-dt__pagina--activa {
+  background: var(--acme-primario);
+  color: #fff;
+  border-color: var(--acme-primario);
+}

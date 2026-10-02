@@ -1,0 +1,23 @@
+@if (abierto()) {
+  <div class="acme-overlay" (click)="cerrarAlFondo() && cerrar.emit()">
+    <div
+      class="acme-dialogo"
+      [class]="'acme-dialogo--' + tamano()"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-label]="titulo()"
+      (click)="$event.stopPropagation()"
+    >
+      <header class="acme-dialogo__cabecera">
+        <h2 class="acme-dialogo__titulo">{{ titulo() }}</h2>
+        <button type="button" class="acme-dialogo__cerrar" (click)="cerrar.emit()" aria-label="Cerrar">×</button>
+      </header>
+      <div class="acme-dialogo__cuerpo">
+        <ng-content />
+      </div>
+      <footer class="acme-dialogo__pie">
+        <ng-content select="[pie]" />
+      </footer>
+    </div>
+  </div>
+}

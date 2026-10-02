@@ -1,12 +1,28 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, effect, signal, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Sidebar } from './components/sidebar';
+import { Header } from './components/header';
+import { ThemeService } from './services/theme';
+import { Auth } from './services/auth';
+import { UiToastContainer } from './shared/components/ui-toast-container';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.scss',
+  imports: [RouterOutlet, Sidebar, Header, UiToastContainer],
   templateUrl: './app.html',
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('dashboard-nx');
+  private readonly theme = inject(ThemeService);
+  private readonly auth = inject(Auth);
+  readonly titulo = signal('Acme ERP — Panel de control');
+
+  @ViewChild(Sidebar) sidebar!: Sidebar;
+
+  constructor() {
+    effect(() => {
+      this.theme.inicializarDesdeStorage();
+      this.auth.sesionDemo();
+    });
+  }
 }

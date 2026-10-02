@@ -1,0 +1,22 @@
+// Variables base del kit ACME. Se importan desde los estilos globales de la aplicación.
+:root {
+  --acme-primario: #4f46e5;
+  --acme-primario-suave: #eef2ff;
+  --acme-superficie: #ffffff;
+  --acme-fondo-suave: #f1f5f9;
+  --acme-borde: #e2e8f0;
+  --acme-texto: #0f172a;
+  --acme-texto-suave: #64748b;
+  --acme-peligro: #dc2626;
+}
+
+[data-theme='oscuro'] {
+  --acme-primario: #818cf8;
+  --acme-primario-suave: #1e1b4b;
+  --acme-superficie: #1e293b;
+  --acme-fondo-suave: #0f172a;
+  --acme-borde: #334155;
+  --acme-texto: #e2e8f0;
+  --acme-texto-suave: #94a3b8;
+  --acme-peligro: #ef4444;
+}

@@ -1,0 +1,23 @@
+<div class="ui-input-group">
+  @if (etiqueta()) {
+    <label class="ui-input__etiqueta" [for]="id()">
+      {{ etiqueta() }} @if (requerido()) { <span class="ui-input__requerido" aria-hidden="true">*</span> }
+    </label>
+  }
+  <input
+    [id]="id()"
+    [type]="tipo()"
+    [placeholder]="placeholder()"
+    [disabled]="deshabilitado()"
+    [value]="valor"
+    (input)="onInput($event)"
+    (blur)="onBlur()"
+    class="ui-input"
+    [class.ui-input--error]="error()"
+    [attr.aria-invalid]="error() ? 'true' : 'false'"
+    [attr.aria-describedby]="error() ? id() + '-error' : null"
+  />
+  @if (error()) {
+    <span class="ui-input__error" [id]="id() + '-error'" role="alert">{{ error() }}</span>
+  }
+</div>

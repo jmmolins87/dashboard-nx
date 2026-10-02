@@ -1,0 +1,63 @@
+:host {
+  display: inline-flex;
+}
+
+.acme-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-family: inherit;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: filter 0.15s ease, background 0.15s ease;
+  line-height: 1;
+}
+
+.acme-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.acme-btn--primario {
+  background: var(--acme-primario);
+  color: #fff;
+}
+
+.acme-btn--secundario {
+  background: var(--acme-superficie);
+  color: var(--acme-texto);
+  border-color: var(--acme-borde);
+}
+
+.acme-btn--fantasma {
+  background: transparent;
+  color: var(--acme-primario);
+}
+
+.acme-btn--peligro {
+  background: var(--acme-peligro, #c0392b);
+  color: #fff;
+}
+
+.acme-btn--pequeño { padding: 0.3rem 0.65rem; font-size: 0.78rem; }
+.acme-btn--mediano { padding: 0.5rem 1rem; font-size: 0.875rem; }
+.acme-btn--grande { padding: 0.7rem 1.4rem; font-size: 1rem; }
+
+.acme-btn:not(:disabled):hover {
+  filter: brightness(1.08);
+}
+
+.acme-btn__spinner {
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  animation: acme-girar 0.7s linear infinite;
+}
+
+@keyframes acme-girar {
+  to { transform: rotate(360deg); }
+}

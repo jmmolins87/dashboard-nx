@@ -1,0 +1,11 @@
+.ui-table__scroll { overflow-x: auto; }
+.ui-table__tabla { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.ui-table__tabla th { text-align: left; padding: 0.6rem 0.75rem; background: var(--color-fondo-suave); color: var(--color-texto-suave); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--color-borde); user-select: none; cursor: default; white-space: nowrap; }
+.ui-table__tabla td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--color-borde); color: var(--color-texto); }
+.ui-table__tabla tbody tr:hover { background: var(--color-fondo-suave); }
+.ui-table__fila--clicable { cursor: pointer; }
+.ui-table__celda--derecha { text-align: right; }
+.ui-table__celda--centro { text-align: center; }
+.ui-table__vacio { padding: 2.2rem 1rem; text-align: center; color: var(--color-texto-suave); font-size: 0.9rem; }
+.ui-table__esqueleto-linea { height: 2.4rem; border-radius: 6px; margin: 0.5rem 0.75rem; background: linear-gradient(90deg, var(--color-fondo-suave) 25%, var(--color-borde) 50%, var(--color-fondo-suave) 75%); background-size: 200% 100%; animation: ui-table-brillo 1.2s infinite; }
+@keyframes ui-table-brillo { to { background-position: -200% 0; } }

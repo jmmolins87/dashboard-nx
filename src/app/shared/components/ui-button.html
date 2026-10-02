@@ -1,0 +1,11 @@
+<button
+  [type]="tipo()"
+  [class]="clases()"
+  [disabled]="deshabilitado() || cargando()"
+  (click)="onClick($event)"
+>
+  @if (cargando()) {
+    <span class="ui-btn__spinner" aria-hidden="true"></span>
+  }
+  <span class="ui-btn__contenido"><ng-content /></span>
+</button>
