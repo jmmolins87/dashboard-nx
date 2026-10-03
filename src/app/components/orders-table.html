@@ -1,1 +1,53 @@
-<p>orders-table works!</p>
+<div class="orders-table" [class.orders-table--cargando]="cargando()">
+  @if (cargando()) {
+    <div class="orders-table__esqueleto" role="status" aria-label="Cargando">
+      @for (linea of [1, 2, 3, 4, 5]; track linea) {
+        <div class="orders-table__esqueleto-linea"></div>
+      }
+    </div>
+  } @else if (filas().length === 0) {
+    <div class="orders-table__vacio">Sin pedidos</div>
+  } @else {
+    <div class="orders-table__scroll">
+      <table class="orders-table__tabla">
+        <thead>
+          <tr>
+            @for (col of columnas(); track col.clave) {
+              <th [class]="'orders-table__celda--' + (col.alineacion ?? 'izquierda')">{{ col.titulo }}</th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          @for (fila of filas(); track fila.id) {
+            <tr
+              class="orders-table__fila"
+              (click)="filaClic()?.(fila)"
+            >
+              @for (col of columnas(); track col.clave) {
+                <td [class]="'orders-table__celda--' + (col.alineacion ?? 'izquierda')">
+                  @switch (col.clave) {
+                    @case ('fecha') {
+                      <span class="orders-table__fecha">{{ fila[col.clave] | dateDisplay }}</span>
+                    }
+                    @case ('estado') {
+                      <span
+                        class="orders-table__badge"
+                        [class]="'orders-table__badge orders-table__badge--' + fila[col.clave]"
+                      >{{ fila[col.clave] }}</span>
+                    }
+                    @case ('total') {
+                      <span class="orders-table__total">{{ fila[col.clave] | currencyDisplay }}</span>
+                    }
+                    @default {
+                      {{ fila[col.clave] ?? '—' }}
+                    }
+                  }
+                </td>
+              }
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

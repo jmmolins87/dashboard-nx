@@ -1,0 +1,160 @@
+- generic [ref=f7e2]:
+  - generic [ref=f7e3]:
+    - generic:
+      - navigation "Navegación principal":
+        - navigation [ref=f7e4]:
+          - list:
+            - listitem:
+              - link [ref=f7e5] [cursor=pointer]:
+                - /url: /pedidos
+                - generic [aria-hidden] [ref=f7e6]: 📦
+            - listitem:
+              - link [ref=f7e7] [cursor=pointer]:
+                - /url: /facturacion
+                - generic [aria-hidden] [ref=f7e8]: 🧾
+            - listitem:
+              - link [ref=f7e9] [cursor=pointer]:
+                - /url: /clientes
+                - generic [aria-hidden] [ref=f7e10]: 👥
+            - listitem:
+              - link [ref=f7e11] [cursor=pointer]:
+                - /url: /inventario
+                - generic [aria-hidden] [ref=f7e12]: 📦
+            - listitem:
+              - link [ref=f7e13] [cursor=pointer]:
+                - /url: /informes
+                - generic [aria-hidden] [ref=f7e14]: 📊
+            - listitem:
+              - link [ref=f7e15] [cursor=pointer]:
+                - /url: /ajustes/usuarios
+                - generic [aria-hidden] [ref=f7e16]: ⚙️
+        - button "Colapsar menú" [ref=f7e18] [cursor=pointer]
+    - main [ref=f7e21]:
+      - generic [ref=f7e22]:
+        - generic [ref=f7e23]:
+          - generic "Inicio" [ref=f7e25]: Acme ERP
+          - searchbox "Búsqueda global" [ref=f7e28]
+          - generic [ref=f7e29]:
+            - button "Modo oscuro" [ref=f7e30] [cursor=pointer]: ☀️
+            - generic [ref=f7e31]:
+              - generic [ref=f7e32]: Administrador Principal
+              - button "Salir" [ref=f7e33] [cursor=pointer]
+        - generic:
+          - status
+      - generic [ref=f7e34]:
+        - generic [ref=f7e36]:
+          - generic [ref=f7e37]:
+            - navigation "Ruta de navegación"
+            - generic [ref=f7e38]:
+              - heading "Panel de control" [level=1] [ref=f7e39]
+              - paragraph [ref=f7e40]: Resumen general del negocio
+          - button "Actualizar" [ref=f7e43] [cursor=pointer]
+        - generic [ref=f7e45]:
+          - generic [ref=f7e46]:
+            - generic [ref=f7e48]:
+              - generic [aria-hidden] [ref=f7e49]: 📦
+              - generic [ref=f7e50]:
+                - paragraph [ref=f7e51]: Pedidos activos
+                - paragraph [ref=f7e52]: "140"
+              - generic [ref=f7e53]: ↑ 12%
+            - generic [ref=f7e55]:
+              - generic [aria-hidden] [ref=f7e56]: 💰
+              - generic [ref=f7e57]:
+                - paragraph [ref=f7e58]: Pendiente cobro
+                - paragraph [ref=f7e59]: 20.529,22 €
+              - generic [ref=f7e60]: ↓ -3%
+            - generic [ref=f7e62]:
+              - generic [aria-hidden] [ref=f7e63]: 👥
+              - generic [ref=f7e64]:
+                - paragraph [ref=f7e65]: Clientes activos
+                - paragraph [ref=f7e66]: "22"
+            - generic [ref=f7e68]:
+              - generic [aria-hidden] [ref=f7e69]: ⚠️
+              - generic [ref=f7e70]:
+                - paragraph [ref=f7e71]: Productos bajo stock
+                - paragraph [ref=f7e72]: "1"
+              - generic [ref=f7e73]: ↑ 8%
+            - generic [ref=f7e75]:
+              - generic [aria-hidden] [ref=f7e76]: 📈
+              - generic [ref=f7e77]:
+                - paragraph [ref=f7e78]: Ventas mes
+                - paragraph [ref=f7e79]: 2496,88 €
+              - generic [ref=f7e80]: ↑ 15%
+          - generic [ref=f7e81]:
+            - generic [ref=f7e82]:
+              - heading "Pedidos recientes" [level=2] [ref=f7e83]
+              - generic [ref=f7e84]: Ver todos
+            - table [ref=f7e91]:
+              - rowgroup [ref=f7e92]:
+                - row [ref=f7e93]:
+                  - columnheader "Número" [ref=f7e94]
+                  - columnheader "Fecha" [ref=f7e95]
+                  - columnheader "Cliente" [ref=f7e96]
+                  - columnheader "Estado" [ref=f7e97]
+                  - columnheader "Total" [ref=f7e98]
+              - rowgroup [ref=f7e99]:
+                - row [ref=f7e100] [cursor=pointer]:
+                  - cell "PED-2026-0001" [ref=f7e101]
+                  - cell "28/04/2026" [ref=f7e102]
+                  - cell "CLI-0018" [ref=f7e103]
+                  - cell "preparacion" [ref=f7e104]
+                  - cell "—" [ref=f7e106]
+                - row [ref=f7e107] [cursor=pointer]:
+                  - cell "PED-2026-0002" [ref=f7e108]
+                  - cell "05/05/2026" [ref=f7e109]
+                  - cell "CLI-0010" [ref=f7e110]
+                  - cell "enviado" [ref=f7e111]
+                  - cell "—" [ref=f7e113]
+                - row [ref=f7e114] [cursor=pointer]:
+                  - cell "PED-2026-0003" [ref=f7e115]
+                  - cell "03/05/2026" [ref=f7e116]
+                  - cell "CLI-0001" [ref=f7e117]
+                  - cell "preparacion" [ref=f7e118]
+                  - cell "—" [ref=f7e120]
+                - row [ref=f7e121] [cursor=pointer]:
+                  - cell "PED-2026-0004" [ref=f7e122]
+                  - cell "03/07/2026" [ref=f7e123]
+                  - cell "CLI-0008" [ref=f7e124]
+                  - cell "preparacion" [ref=f7e125]
+                  - cell "—" [ref=f7e127]
+                - row [ref=f7e128] [cursor=pointer]:
+                  - cell "PED-2026-0005" [ref=f7e129]
+                  - cell "10/04/2026" [ref=f7e130]
+                  - cell "CLI-0018" [ref=f7e131]
+                  - cell "confirmado" [ref=f7e132]
+                  - cell "—" [ref=f7e134]
+          - generic [ref=f7e135]:
+            - generic [ref=f7e136]:
+              - generic [ref=f7e137]:
+                - heading "Facturas pendientes" [level=2] [ref=f7e138]
+                - generic [ref=f7e139]: Ver todas
+              - generic [ref=f7e142]:
+                - generic [ref=f7e143]:
+                  - generic [ref=f7e144]: FAC-2026-0003Teresa Gómez Álvarez · 970,51 €
+                  - generic [ref=f7e145]: Anulada
+                - generic [ref=f7e147]:
+                  - generic [ref=f7e148]: FAC-2026-0004Luis Ruiz García · 1.457,04 €
+                  - generic [ref=f7e149]: Vencida
+                - generic [ref=f7e151]:
+                  - generic [ref=f7e152]: FAC-2026-0005Dolores García Ruiz · 2.113,59 €
+                  - generic [ref=f7e153]: Vencida
+                - generic [ref=f7e155]:
+                  - generic [ref=f7e156]: FAC-2026-0008Miguel López Moreno · 1.105,75 €
+                  - generic [ref=f7e157]: Emitida
+                - generic [ref=f7e159]:
+                  - generic [ref=f7e160]: FAC-2026-0009Rosa Hernández Jiménez · 2.344,60 €
+                  - generic [ref=f7e161]: Vencida
+            - generic [ref=f7e163]:
+              - generic [ref=f7e164]:
+                - heading "Bajo stock" [level=2] [ref=f7e165]
+                - generic [ref=f7e166]: Ver inventario
+              - list [ref=f7e172]:
+                - listitem [ref=f7e173]:
+                  - generic [ref=f7e174]:
+                    - generic [ref=f7e175]: Foco LED 50W IP65
+                    - generic [ref=f7e176]: SKU-0032
+                  - generic [ref=f7e177]:
+                    - generic [ref=f7e178]: "8"
+                    - generic [ref=f7e179]: / 13 mín
+  - generic:
+    - status

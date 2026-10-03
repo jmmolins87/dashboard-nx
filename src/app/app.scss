@@ -51,6 +51,8 @@ a:hover { text-decoration: underline; }
   .app-main { margin-left: 72px; }
 }
 @media (max-width: 768px) {
+  .app-shell { grid-template-columns: 1fr; }
   .app-header__centro { display: none; }
   .app-header__busqueda--abierta { position: fixed; top: 64px; left: 0; right: 0; z-index: 99; background: var(--color-superficie); border-bottom: 1px solid var(--color-borde); padding: 1rem; }
+  .app-main { margin-left: 0 !important; }
 }

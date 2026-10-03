@@ -1,1 +1,31 @@
-<p>low-stock-panel works!</p>
+<div class="low-stock-panel">
+  @if (productos().length === 0) {
+    <div class="low-stock-panel__vacio">Sin productos con stock bajo</div>
+  } @else {
+    <ul class="low-stock-panel__lista">
+      @for (p of productos(); track p.id) {
+        <li class="low-stock-panel__item">
+          <div class="low-stock-panel__info">
+            <span class="low-stock-panel__nombre">{{ p.nombre }}</span>
+            <span class="low-stock-panel__sku">{{ p.sku }}</span>
+          </div>
+          <div class="low-stock-panel__stock">
+            <span
+              class="low-stock-panel__cantidad"
+              [class.low-stock-panel__cantidad--critico]="p.stock === 0"
+            >{{ p.stock }}</span>
+            <span class="low-stock-panel__minimo">/ {{ p.stockMinimo }} mín</span>
+          </div>
+          <div class="low-stock-panel__barra" aria-hidden="true">
+            <div
+              class="low-stock-panel__barra-relleno"
+              [class.low-stock-panel__barra-relleno--critico]="p.stock === 0"
+              [class.low-stock-panel__barra-relleno--bajo]="p.stock > 0 && p.stock <= p.stockMinimo"
+              [style.width.%]="barraPorcentaje(p)"
+            ></div>
+          </div>
+        </li>
+      }
+    </ul>
+  }
+</div>

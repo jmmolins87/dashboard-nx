@@ -6,21 +6,13 @@ import { Orders } from '../services/orders';
 import { CustomerService as Customers } from '../services/customers';
 import { Inventory } from '../services/inventory';
 import { Notifications } from '../services/notifications';
-import { UiPageHeader } from '../shared/components/ui-page-header';
-import { UiCard } from '../shared/components/ui-card';
-import { UiButton } from '../shared/components/ui-button';
-import { UiInput } from '../shared/components/ui-input';
-import { UiSelect } from '../shared/components/ui-select';
-import { UiBadge } from '../shared/components/ui-badge';
 import { Order } from '../models/order.model';
 import { OrderItem } from '../models/order.model';
 import { OrderStatus, OrderPriority } from '../models/order.model';
-import { UiSkeleton } from '../shared/components/ui-skeleton';
-import { UiEmptyState } from '../shared/components/ui-empty-state';
 
 @Component({
   selector: 'app-order-edit-page',
-  imports: [CommonModule, FormsModule, UiPageHeader, UiCard, UiButton, UiInput, UiSelect, UiBadge, UiSkeleton, UiEmptyState],
+  imports: [CommonModule, FormsModule],
   templateUrl: './order-edit-page.html',
   styleUrl: './order-edit-page.scss',
 })

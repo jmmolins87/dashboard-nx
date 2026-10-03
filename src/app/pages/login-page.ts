@@ -23,12 +23,19 @@ export class LoginPage {
   readonly usuariosDisponibles = computed(() => this.users.lista().filter((u) => u.estado === 'activo'));
 
   login(): void {
-    const u = this.usuariosDisponibles().find((usr) => usr.email === this.usuario());
+    const email = this.usuario().trim().toLowerCase();
+    const u = this.usuariosDisponibles().find((usr) => usr.email.toLowerCase() === email);
     if (u) {
       this.auth.login(u);
       this.error.set('');
     } else {
       this.error.set('Usuario no encontrado');
     }
+  }
+
+  seleccionarUsuario(u: { email: string }) {
+    this.usuario.set(u.email);
+    this.password.set('1234');
+    this.login();
   }
 }

@@ -1,0 +1,44 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - navigation "Navegación principal" [ref=e5]:
+      - navigation [ref=e6]:
+        - list
+      - generic [ref=e32]:
+        - button "Colapsar menú" [expanded] [ref=e33] [cursor=pointer]
+        - button "Salir" [ref=e38] [cursor=pointer]
+    - main [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic "Inicio" [ref=e43]: Acme ERP
+          - searchbox "Búsqueda global" [ref=e46]
+          - generic [ref=e47]:
+            - button "Modo oscuro" [ref=e48] [cursor=pointer]: ☀️
+            - generic [ref=e188]: Entrar
+        - paragraph [ref=e53]: ui-toast-container works!
+      - generic [ref=e191]:
+        - generic [ref=e193]:
+          - heading "Iniciar sesión" [level=3] [ref=e194]
+          - paragraph [ref=e195]: Selecciona un usuario de prueba
+        - generic [ref=e197]:
+          - generic [ref=e199]:
+            - generic [ref=e200]: Usuario *
+            - textbox "Email del usuario" [ref=e201]
+          - generic [ref=e203]:
+            - generic [ref=e204]: Contraseña
+            - textbox "Cualquier contraseña" [ref=e205]
+          - generic [ref=e206]:
+            - generic [ref=e207]: "Usuarios de prueba:"
+            - generic [ref=e208]:
+              - button "Administrador Principal (admin)" [ref=e209] [cursor=pointer]
+              - button "Javier Gutiérrez (consulta)" [ref=e210] [cursor=pointer]
+              - button "Manuel Ruiz (gestor)" [ref=e211] [cursor=pointer]
+              - button "Dolores Romero (consulta)" [ref=e212] [cursor=pointer]
+              - button "Antonio Moreno (consulta)" [ref=e213] [cursor=pointer]
+              - button "Carmen Navarro (gestor)" [ref=e214] [cursor=pointer]
+              - button "María García (consulta)" [ref=e215] [cursor=pointer]
+              - button "Daniel Jiménez (comercial)" [ref=e216] [cursor=pointer]
+          - button "Entrar" [disabled] [ref=e218]
+        - generic [ref=e221]:
+          - button "Cancelar" [ref=e223] [cursor=pointer]
+          - button "Confirmar" [ref=e226] [cursor=pointer]
+  - paragraph [ref=e94]: ui-toast-container works!

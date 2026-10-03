@@ -1,0 +1,97 @@
+.orders-table__scroll {
+  overflow-x: auto;
+}
+
+.orders-table__tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.orders-table__tabla thead th {
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--color-texto-suave);
+  border-bottom: 1px solid var(--color-borde);
+  white-space: nowrap;
+  background: var(--color-superficie);
+}
+
+.orders-table__fila {
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.orders-table__fila:hover {
+  background: var(--color-primario-suave);
+}
+
+.orders-table__tabla td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--color-borde);
+  color: var(--color-texto);
+}
+
+.orders-table__celda--derecha { text-align: right; }
+.orders-table__celda--centro { text-align: center; }
+.orders-table__celda--izquierda { text-align: left; }
+
+.orders-table__fecha {
+  white-space: nowrap;
+  color: var(--color-texto-suave);
+  font-size: 0.8rem;
+}
+
+.orders-table__total {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.orders-table__badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.orders-table__badge--borrador { background: #f1f5f9; color: #475569; }
+.orders-table__badge--confirmado { background: var(--color-info-suave); color: var(--color-info); }
+.orders-table__badge--preparacion { background: var(--color-advertencia-suave); color: var(--color-advertencia); }
+.orders-table__badge--enviado { background: var(--color-primario-suave); color: var(--color-primario); }
+.orders-table__badge--entregado { background: var(--color-exito-suave); color: var(--color-exito); }
+.orders-table__badge--cancelado { background: var(--color-peligro-suave); color: var(--color-peligro); }
+
+.orders-table__vacio {
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-texto-suave);
+  font-size: 0.875rem;
+}
+
+.orders-table__esqueleto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.orders-table__esqueleto-linea {
+  height: 1rem;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: orders-table-skeleton 1.5s infinite;
+}
+
+@keyframes orders-table-skeleton {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orders-table__esqueleto-linea { animation: none; }
+}

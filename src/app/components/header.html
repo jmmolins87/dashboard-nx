@@ -37,13 +37,14 @@
     <button type="button" class="app-header__tema" (click)="alternarTema()" [attr.aria-label]="theme.tema() === 'claro' ? 'Modo oscuro' : 'Modo claro'">
       @if (theme.tema() === 'claro') { ☀️ } @else { 🌙 }
     </button>
-    <div class="app-header__usuario" *ngIf="usuario(); else loginBtn">
-      <span class="app-header__usuario-nombre">{{ usuario()?.nombreCompleto }}</span>
-      <button type="button" class="app-header__logout" (click)="logout()">Salir</button>
-    </div>
-    <ng-template #loginBtn>
+    @if (usuario()) {
+      <div class="app-header__usuario">
+        <span class="app-header__usuario-nombre">{{ usuario()?.nombreCompleto }}</span>
+        <button type="button" class="app-header__logout" (click)="logout()">Salir</button>
+      </div>
+    } @else {
       <a routerLink="/login" class="app-header__login">Entrar</a>
-    </ng-template>
+    }
   </div>
 </header>
 

@@ -1,1 +1,28 @@
-<p>ui-toast-container works!</p>
+<div class="ui-toast-container" role="status" aria-live="polite">
+  @for (toast of toasts(); track toast.id) {
+    <div class="ui-toast" [class]="clasesToast()(toast.tipo).join(' ')">
+      <div class="ui-toast__contenido">
+        <span class="ui-toast__icono" aria-hidden="true">
+          @switch (toast.tipo) {
+            @case ('exito') { ✓ }
+            @case ('error') { ✕ }
+            @case ('advertencia') { ⚠ }
+            @default { ⓘ }
+          }
+        </span>
+        <div class="ui-toast__texto">
+          <p class="ui-toast__titulo">{{ toast.titulo }}</p>
+          @if (toast.mensaje) {
+            <p class="ui-toast__mensaje">{{ toast.mensaje }}</p>
+          }
+        </div>
+      </div>
+      <button
+        type="button"
+        class="ui-toast__cerrar"
+        (click)="cerrar(toast.id)"
+        aria-label="Cerrar notificación"
+      >×</button>
+    </div>
+  }
+</div>

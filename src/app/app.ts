@@ -22,7 +22,6 @@ export class App {
   constructor() {
     effect(() => {
       this.theme.inicializarDesdeStorage();
-      this.auth.sesionDemo();
     });
   }
 }

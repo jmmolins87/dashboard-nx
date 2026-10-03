@@ -9,11 +9,13 @@
     </header>
   }
   <div class="ui-card__cuerpo"><ng-content /></div>
-  <footer class="ui-card__pie">
-    <ng-content select="[pie]" />
-    <div class="ui-card__acciones-pie">
-      <app-ui-button variante="fantasma" (clic)="accionSecundaria.emit()">Cancelar</app-ui-button>
-      <app-ui-button (clic)="accionPrincipal.emit()">Confirmar</app-ui-button>
-    </div>
-  </footer>
+  @if (pieVisible()) {
+    <footer class="ui-card__pie">
+      <ng-content select="[pie]" />
+      <div class="ui-card__acciones-pie">
+        <app-ui-button variante="fantasma" (clic)="accionSecundaria.emit()">Cancelar</app-ui-button>
+        <app-ui-button (clic)="accionPrincipal.emit()">Confirmar</app-ui-button>
+      </div>
+    </footer>
+  }
 </div>

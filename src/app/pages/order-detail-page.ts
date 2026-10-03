@@ -1,6 +1,6 @@
 import { Component, inject, signal, computed, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Orders } from '../services/orders';
 import { CustomerService as Customers } from '../services/customers';
 import { Billing } from '../services/billing';
@@ -9,7 +9,6 @@ import { Notifications } from '../services/notifications';
 import { Dialog } from '../services/dialog';
 import { UiPageHeader } from '../shared/components/ui-page-header';
 import { UiCard } from '../shared/components/ui-card';
-import { UiButton } from '../shared/components/ui-button';
 import { UiBadge } from '../shared/components/ui-badge';
 import { VarianteBadge } from '../shared';
 import { OrderSummaryCard } from '../components/order-summary-card';
@@ -18,13 +17,11 @@ import { OrderTimeline } from '../components/order-timeline';
 import { OrderCancelDialog } from '../components/order-cancel-dialog';
 import { Order, OrderStatus } from '../models/order.model';
 import { InvoiceStatus } from '../models/invoice.model';
-import { UiSkeleton } from '../shared/components/ui-skeleton';
-import { UiEmptyState } from '../shared/components/ui-empty-state';
 import { StatusLabelPipe } from '../pipes/status-label-pipe';
 
 @Component({
   selector: 'app-order-detail-page',
-  imports: [CommonModule, RouterLink, UiPageHeader, UiCard, UiButton, UiBadge, OrderSummaryCard, OrderItemsTable, OrderTimeline, OrderCancelDialog, UiSkeleton, UiEmptyState, StatusLabelPipe],
+  imports: [CommonModule, UiPageHeader, UiCard, UiBadge, OrderSummaryCard, OrderItemsTable, OrderTimeline, OrderCancelDialog, StatusLabelPipe],
   templateUrl: './order-detail-page.html',
   styleUrl: './order-detail-page.scss',
 })

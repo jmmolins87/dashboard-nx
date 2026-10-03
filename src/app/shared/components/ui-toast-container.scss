@@ -1,0 +1,112 @@
+.ui-toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+  max-width: 380px;
+  width: calc(100vw - 2rem);
+}
+
+.ui-toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-borde);
+  background: var(--color-superficie);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  animation: ui-toast-entra 0.25s ease-out;
+}
+
+.ui-toast--exito {
+  border-color: var(--color-exito);
+  background: var(--color-exito-suave);
+}
+.ui-toast--exito .ui-toast__icono { color: var(--color-exito); }
+
+.ui-toast--error {
+  border-color: var(--color-peligro);
+  background: var(--color-peligro-suave);
+}
+.ui-toast--error .ui-toast__icono { color: var(--color-peligro); }
+
+.ui-toast--advertencia {
+  border-color: var(--color-advertencia);
+  background: var(--color-advertencia-suave);
+}
+.ui-toast--advertencia .ui-toast__icono { color: var(--color-advertencia); }
+
+.ui-toast--info {
+  border-color: var(--color-info);
+  background: var(--color-info-suave);
+}
+.ui-toast--info .ui-toast__icono { color: var(--color-info); }
+
+.ui-toast__contenido {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.ui-toast__icono {
+  flex-shrink: 0;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.ui-toast__texto { min-width: 0; }
+
+.ui-toast__titulo {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+.ui-toast__mensaje {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  color: var(--color-texto-suave);
+  word-break: break-word;
+}
+
+.ui-toast__cerrar {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--color-texto-suave);
+  padding: 0.1rem 0.3rem;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+}
+.ui-toast__cerrar:hover {
+  color: var(--color-texto);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+@keyframes ui-toast-entra {
+  from {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-toast { animation: none; }
+}

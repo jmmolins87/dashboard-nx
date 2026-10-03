@@ -1,0 +1,104 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - navigation "Navegación principal" [ref=e5]:
+      - navigation [ref=e6]:
+        - list [ref=e7]:
+          - listitem [ref=e8]:
+            - link "Pedidos" [ref=e9] [cursor=pointer]:
+              - /url: /pedidos
+              - generic [aria-hidden] [ref=e10]: 📦
+          - listitem [ref=e12]:
+            - link "Facturación" [ref=e13] [cursor=pointer]:
+              - /url: /facturacion
+              - generic [aria-hidden] [ref=e14]: 🧾
+          - listitem [ref=e16]:
+            - link "Clientes" [ref=e17] [cursor=pointer]:
+              - /url: /clientes
+              - generic [aria-hidden] [ref=e18]: 👥
+          - listitem [ref=e20]:
+            - link "Inventario" [ref=e21] [cursor=pointer]:
+              - /url: /inventario
+              - generic [aria-hidden] [ref=e22]: 📦
+          - listitem [ref=e24]:
+            - link "Informes" [ref=e25] [cursor=pointer]:
+              - /url: /informes
+              - generic [aria-hidden] [ref=e26]: 📊
+          - listitem [ref=e28]:
+            - link "Ajustes" [ref=e29] [cursor=pointer]:
+              - /url: /ajustes/usuarios
+              - generic [aria-hidden] [ref=e30]: ⚙️
+      - generic [ref=e32]:
+        - button "Colapsar menú" [expanded] [ref=e33] [cursor=pointer]
+        - generic [ref=e36]:
+          - generic [ref=e37]: Administrador Principal
+          - button "Salir" [ref=e38] [cursor=pointer]
+    - main [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic "Inicio" [ref=e43]: Acme ERP
+          - searchbox "Búsqueda global" [ref=e46]
+          - generic [ref=e47]:
+            - button "Modo oscuro" [ref=e48] [cursor=pointer]: ☀️
+            - generic [ref=e49]:
+              - generic [ref=e50]: Administrador Principal
+              - button "Salir" [ref=e51] [cursor=pointer]
+        - paragraph [ref=e53]: ui-toast-container works!
+      - generic [ref=e95]:
+        - generic [ref=e97]:
+          - generic [ref=e98]:
+            - navigation "Ruta de navegación"
+            - generic [ref=e99]:
+              - heading "Panel de control" [level=1] [ref=e100]
+              - paragraph [ref=e101]: Resumen general del negocio
+          - button "Actualizar" [ref=e104] [cursor=pointer]
+        - generic [ref=e106]:
+          - generic [ref=e107]:
+            - paragraph [ref=e109]: kpi-card works!
+            - paragraph [ref=e111]: kpi-card works!
+            - paragraph [ref=e113]: kpi-card works!
+            - paragraph [ref=e115]: kpi-card works!
+            - paragraph [ref=e117]: kpi-card works!
+          - generic [ref=e118]:
+            - generic [ref=e119]:
+              - heading "Pedidos recientes" [level=2] [ref=e120]
+              - generic [ref=e121]: Ver todos
+            - generic [ref=e123]:
+              - paragraph [ref=e126]: orders-table works!
+              - generic [ref=e128]:
+                - button "Cancelar" [ref=e130] [cursor=pointer]
+                - button "Confirmar" [ref=e133] [cursor=pointer]
+          - generic [ref=e135]:
+            - generic [ref=e136]:
+              - generic [ref=e137]:
+                - heading "Facturas pendientes" [level=2] [ref=e138]
+                - generic [ref=e139]: Ver todas
+              - generic [ref=e141]:
+                - generic [ref=e142]:
+                  - generic [ref=e143]:
+                    - generic [ref=e144]: FAC-2026-0003Teresa Gómez Álvarez · 970,51 €
+                    - generic [ref=e145]: Anulada
+                  - generic [ref=e147]:
+                    - generic [ref=e148]: FAC-2026-0004Luis Ruiz García · 1.457,04 €
+                    - generic [ref=e149]: Vencida
+                  - generic [ref=e151]:
+                    - generic [ref=e152]: FAC-2026-0005Dolores García Ruiz · 2.113,59 €
+                    - generic [ref=e153]: Vencida
+                  - generic [ref=e155]:
+                    - generic [ref=e156]: FAC-2026-0008Miguel López Moreno · 1.105,75 €
+                    - generic [ref=e157]: Emitida
+                  - generic [ref=e159]:
+                    - generic [ref=e160]: FAC-2026-0009Rosa Hernández Jiménez · 2.344,60 €
+                    - generic [ref=e161]: Vencida
+                - generic [ref=e164]:
+                  - button "Cancelar" [ref=e166] [cursor=pointer]
+                  - button "Confirmar" [ref=e169] [cursor=pointer]
+            - generic [ref=e171]:
+              - generic [ref=e172]:
+                - heading "Bajo stock" [level=2] [ref=e173]
+                - generic [ref=e174]: Ver inventario
+              - generic [ref=e176]:
+                - paragraph [ref=e179]: low-stock-panel works!
+                - generic [ref=e181]:
+                  - button "Cancelar" [ref=e183] [cursor=pointer]
+                  - button "Confirmar" [ref=e186] [cursor=pointer]
+  - paragraph [ref=e94]: ui-toast-container works!

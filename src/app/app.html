@@ -1,5 +1,5 @@
 <div class="app-shell">
-  <app-sidebar />
+  <app-sidebar #sidebar />
   <main class="app-main" [class.app-main--colapsado]="sidebar.colapsado()">
     <app-header />
     <router-outlet />

@@ -1,1 +1,19 @@
-<p>kpi-card works!</p>
+<div class="kpi-card">
+  <div class="kpi-card__icono" aria-hidden="true">{{ kpi().icono ?? '📊' }}</div>
+  <div class="kpi-card__info">
+    <p class="kpi-card__etiqueta">{{ kpi().etiqueta }}</p>
+    <p class="kpi-card__valor">{{ kpi().valor }}</p>
+  </div>
+  @if (kpi().tendencia && kpi().tendencia !== 'estable') {
+    <span
+      class="kpi-card__tendencia"
+      [class.kpi-card__tendencia--sube]="kpi().tendencia === 'sube'"
+      [class.kpi-card__tendencia--baja]="kpi().tendencia === 'baja'"
+    >
+      {{ kpi().tendencia === 'sube' ? '↑' : '↓' }}
+      @if (kpi().cambioPorcentaje !== undefined && kpi().cambioPorcentaje !== null) {
+        {{ kpi().cambioPorcentaje }}%
+      }
+    </span>
+  }
+</div>

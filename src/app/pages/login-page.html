@@ -4,7 +4,7 @@
       etiqueta="Usuario"
       placeholder="Email del usuario"
       [(ngModel)]="usuario"
-      nombre="usuario"
+      name="usuario"
       [requerido]="true"
       [error]="error()"
     />
@@ -13,19 +13,19 @@
       tipo="password"
       placeholder="Cualquier contraseña"
       [(ngModel)]="password"
-      nombre="password"
+      name="password"
     />
     @if (error()) { <div class="login-error">{{ error() }}</div> }
     <div class="login-usuarios">
       <label class="login-label">Usuarios de prueba:</label>
       <div class="login-botones">
         @for (u of usuariosDisponibles(); track u.id) {
-          <button type="button" class="login-usuario-btn" (click)="usuario.set(u.email); password.set('1234')">
+          <button type="button" class="login-usuario-btn" (click)="seleccionarUsuario(u)">
             {{ u.nombre }} ({{ u.rol }})
           </button>
         }
       </div>
     </div>
-    <app-ui-button tipo="submit" bloqueado>Entrar</app-ui-button>
+    <app-ui-button tipo="submit" [deshabilitado]="!usuario() || !password()">Entrar</app-ui-button>
   </form>
 </app-ui-card>

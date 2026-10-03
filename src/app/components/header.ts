@@ -4,12 +4,11 @@ import { Auth } from '../services/auth';
 import { Notifications } from '../services/notifications';
 import { ThemeService } from '../services/theme';
 import { GlobalSearch } from '../services/global-search';
-import { UiButton } from '../shared/components/ui-button';
 import { UiToastContainer } from '../shared/components/ui-toast-container';
 
 @Component({
   selector: 'app-header',
-  imports: [UiButton, UiToastContainer],
+  imports: [UiToastContainer],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })

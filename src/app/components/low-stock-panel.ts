@@ -9,4 +9,9 @@ import { Product } from '../models/product.model';
 })
 export class LowStockPanel {
   readonly productos = input.required<Product[]>();
+
+  barraPorcentaje(p: Product): number {
+    if (p.stockMinimo === 0) return 100;
+    return Math.min(100, Math.round((p.stock / p.stockMinimo) * 100));
+  }
 }

@@ -17,6 +17,7 @@ export class UiInput implements ControlValueAccessor {
   readonly error = input<string>('');
   readonly requerido = input(false);
   readonly id = input<string>('');
+  readonly name = input<string>('');
   private _valor = signal<string>('');
   private _deshabilitado = signal(false);
 

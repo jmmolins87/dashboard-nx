@@ -1,22 +1,29 @@
-import { Component, inject, signal, computed } from '@angular/core';
+import { Component, inject, signal, computed, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { DOCUMENT } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { Permissions } from '../services/permissions';
 import { Auth } from '../services/auth';
-import { UiButton } from '../shared/components/ui-button';
-import { UiModal } from '../shared/components/ui-modal';
-import { UiToastContainer } from '../shared/components/ui-toast-container';
 import { Permission } from '../models/user.model';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [RouterModule, RouterLink, RouterLinkActive, UiButton, UiModal, UiToastContainer],
+  imports: [RouterModule, RouterLink, RouterLinkActive],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.scss',
 })
 export class Sidebar {
   private readonly permissions = inject(Permissions);
   private readonly auth = inject(Auth);
-  readonly colapsado = signal(false);
+  private readonly platformId = inject(PLATFORM_ID);
+  private readonly document = inject(DOCUMENT);
+
+  readonly colapsado = signal(this.esMobile());
+
+  private esMobile(): boolean {
+    if (!isPlatformBrowser(this.platformId)) return true;
+    return this.document.defaultView?.matchMedia('(max-width: 768px)').matches ?? false;
+  }
 
   readonly areas = computed(() => [
     { id: 'pedidos', label: 'Pedidos', icono: '📦', ruta: '/pedidos', permiso: 'pedidos.ver' as Permission },

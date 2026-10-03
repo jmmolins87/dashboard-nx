@@ -1,0 +1,72 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - navigation "Navegación principal" [ref=e5]:
+      - navigation [ref=e6]:
+        - list [ref=e7]:
+          - listitem [ref=e8]:
+            - link "Pedidos" [ref=e9] [cursor=pointer]:
+              - /url: /pedidos
+              - generic [aria-hidden] [ref=e10]: 📦
+          - listitem [ref=e12]:
+            - link "Facturación" [ref=e13] [cursor=pointer]:
+              - /url: /facturacion
+              - generic [aria-hidden] [ref=e14]: 🧾
+          - listitem [ref=e16]:
+            - link "Clientes" [ref=e17] [cursor=pointer]:
+              - /url: /clientes
+              - generic [aria-hidden] [ref=e18]: 👥
+          - listitem [ref=e20]:
+            - link "Inventario" [ref=e21] [cursor=pointer]:
+              - /url: /inventario
+              - generic [aria-hidden] [ref=e22]: 📦
+          - listitem [ref=e24]:
+            - link "Informes" [ref=e25] [cursor=pointer]:
+              - /url: /informes
+              - generic [aria-hidden] [ref=e26]: 📊
+          - listitem [ref=e28]:
+            - link "Ajustes" [ref=e29] [cursor=pointer]:
+              - /url: /ajustes/usuarios
+              - generic [aria-hidden] [ref=e30]: ⚙️
+      - generic [ref=e32]:
+        - button "Colapsar menú" [expanded] [ref=e33] [cursor=pointer]
+        - generic [ref=e36]:
+          - generic [ref=e37]: Administrador Principal
+          - button "Salir" [ref=e38] [cursor=pointer]
+    - main [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic "Inicio" [ref=e43]: Acme ERP
+          - searchbox "Búsqueda global" [ref=e46]
+          - generic [ref=e47]:
+            - button "Modo oscuro" [ref=e48] [cursor=pointer]: ☀️
+            - generic [ref=e49]:
+              - generic [ref=e50]: Administrador Principal
+              - button "Salir" [ref=e51] [cursor=pointer]
+        - paragraph [ref=e53]: ui-toast-container works!
+      - generic [ref=e56]:
+        - generic [ref=e58]:
+          - heading "Iniciar sesión" [level=3] [ref=e59]
+          - paragraph [ref=e60]: Selecciona un usuario de prueba
+        - generic [ref=e62]:
+          - generic [ref=e64]:
+            - generic [ref=e65]: Usuario *
+            - textbox "Email del usuario" [ref=e66]
+          - generic [ref=e68]:
+            - generic [ref=e69]: Contraseña
+            - textbox "Cualquier contraseña" [ref=e70]
+          - generic [ref=e71]:
+            - generic [ref=e72]: "Usuarios de prueba:"
+            - generic [ref=e73]:
+              - button "Administrador Principal (admin)" [ref=e74] [cursor=pointer]
+              - button "Javier Gutiérrez (consulta)" [ref=e75] [cursor=pointer]
+              - button "Manuel Ruiz (gestor)" [ref=e76] [cursor=pointer]
+              - button "Dolores Romero (consulta)" [ref=e77] [cursor=pointer]
+              - button "Antonio Moreno (consulta)" [ref=e78] [cursor=pointer]
+              - button "Carmen Navarro (gestor)" [ref=e79] [cursor=pointer]
+              - button "María García (consulta)" [ref=e80] [cursor=pointer]
+              - button "Daniel Jiménez (comercial)" [ref=e81] [cursor=pointer]
+          - button "Entrar" [disabled] [ref=e83]
+        - generic [ref=e86]:
+          - button "Cancelar" [ref=e88] [cursor=pointer]
+          - button "Confirmar" [ref=e91] [cursor=pointer]
+  - paragraph [ref=e94]: ui-toast-container works!

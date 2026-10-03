@@ -9,13 +9,11 @@ import { OrdersFilterPanel } from '../components/orders-filter-panel';
 import { UiPageHeader } from '../shared/components/ui-page-header';
 import { UiPagination } from '../shared/components/ui-pagination';
 import { UiCard } from '../shared/components/ui-card';
-import { UiSkeleton } from '../shared/components/ui-skeleton';
-import { UiEmptyState } from '../shared/components/ui-empty-state';
 import { OrderFilters, OrderStatus } from '../models/order.model';
 
 @Component({
   selector: 'app-orders-page',
-  imports: [CommonModule, FormsModule, OrdersTable, OrdersFilterPanel, UiPageHeader, UiPagination, UiCard, UiSkeleton, UiEmptyState],
+  imports: [CommonModule, FormsModule, OrdersTable, OrdersFilterPanel, UiPageHeader, UiPagination, UiCard],
   templateUrl: './orders-page.html',
   styleUrl: './orders-page.scss',
 })

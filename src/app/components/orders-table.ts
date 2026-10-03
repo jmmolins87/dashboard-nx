@@ -1,8 +1,10 @@
 import { Component, input } from '@angular/core';
+import { DateDisplayPipe } from '../pipes/date-display-pipe';
+import { CurrencyDisplayPipe } from '../pipes/currency-display-pipe';
 
 @Component({
   selector: 'app-orders-table',
-  imports: [],
+  imports: [DateDisplayPipe, CurrencyDisplayPipe],
   templateUrl: './orders-table.html',
   styleUrl: './orders-table.scss',
 })

@@ -11,6 +11,7 @@ export class UiCard {
   readonly titulo = input<string>('');
   readonly subtitulo = input<string>('');
   readonly elevada = input(false);
+  readonly pieVisible = input(false);
   readonly accionPrincipal = output<void>();
   readonly accionSecundaria = output<void>();
 
